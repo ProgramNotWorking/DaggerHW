@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -46,6 +49,15 @@ dependencies {
     implementation(libs.dagger)
 //    implementation(libs.dagger.processor)
     kapt(libs.dagger.compiler)
+
+    implementation(libs.assisted.inject.annotations.dagger2)
+    kapt(libs.assisted.inject.processor.dagger2)
+
+    // ViewModel lifecycle
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    // Android fragment
+    implementation(libs.androidx.fragment.ktx)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
